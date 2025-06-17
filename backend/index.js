@@ -6,18 +6,18 @@ import route from "./routes/routes.js"
 
 const app=express()
 const db=mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'abu786786',
+    host:'10.10.8.46',
+    user:'devuser',
+    password:'root',
     database:'hrm',
-    port:3306
-})
+    port:3306       
+})       
 
 db.connect((error) => {
     if (error) {
         console.log("MySQL connection failed:");
     } else {
-        console.log("MySQL connected successfully");
+        console.log("MySQL connected successfully");                
     }
 });
 
@@ -36,3 +36,10 @@ app.listen(3000,()=>{
 app.use("/v1",route)
 
 export default db
+
+
+
+
+
+
+                                                             
