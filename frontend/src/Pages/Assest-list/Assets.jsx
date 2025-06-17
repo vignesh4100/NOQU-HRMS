@@ -1,29 +1,29 @@
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';                                                                       
+import { useState, useEffect } from 'react';                                        
 import axios from 'axios';
 import './Assets.css'; // Import the CSS file
-
+                                                                                                                                                                    
 const Assets = () => {
   const [assets, setAssets] = useState([]);
-
+                      
   const getAssetDetails = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/v1/getUsers');
+      const res = await axios.get('http://localhost:3000/v1/getUsers');                                                                                                        
       setAssets(res.data);
     } catch (error) {
       console.error('Error fetching asset data:', error);
     }
   };
-
+                                                                                                                       
   useEffect(() => {
     getAssetDetails();
   }, []);
-
+                                  
   return (
     <div className="container">
       {/* Main Content */}
       <div className="main-content">
-        <h1 className="title">Asset Management</h1>
+        <h1 className="title">Asset Management</h1>                                
         <table className="asset-table">
           <thead>
             <tr>
@@ -49,7 +49,7 @@ const Assets = () => {
               ))
             ) : (
               <tr>
-                <td colSpan="6" className="no-data">No asset records found.</td>
+                <td colSpan="6" className="no-data">No asset records found.</td>                                  
               </tr>
             )}
           </tbody>
@@ -58,5 +58,8 @@ const Assets = () => {
     </div>
   );
 };
-
+                                                                     
 export default Assets;
+
+
+                                                                                                         
